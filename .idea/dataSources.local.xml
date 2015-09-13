@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - votesky31@localhost" uuid="daa38ba3-8f15-4688-955e-25a403c2698a">
+      <secret-storage>memory</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>votesky31.*</schema-pattern>
+      <default-schemas>votesky31.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - @107.155.101.227" uuid="f6b5c553-30fd-4417-bc4b-d2f6631e2421">
+      <secret-storage>master_key</secret-storage>
+      <user-name>guang</user-name>
+      <schema-pattern>wordpress.*</schema-pattern>
+      <default-schemas>wordpress.*</default-schemas>
+    </data-source>
+  </component>
+</project>

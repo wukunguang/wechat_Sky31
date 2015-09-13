@@ -1,0 +1,117 @@
+
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+*{
+    margin: 0 auto;
+}
+
+
+/***顶部框架***/
+#header{
+    width: 910px;
+    height: 120px;
+    background-color: #ffffff;
+    opacity: 0.9;
+
+
+
+}
+
+#wallTitle{
+    float: left;
+    font-size: 22px;
+    margin-left: 10px;
+    width: 540px;
+    //border: solid 1px #000000;
+    //border-left: none;
+    padding: 20px;
+}
+
+#logo{
+    width: 124px;
+    height: 35px;
+    background-image: url("http://www.sky31.com/statics/images/sky31/logo.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+#code{
+    width: 106px;
+    height: 106px;
+    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/******内容******/
+
+#content{
+    height: auto;
+    width: 910px;
+}
+
+
+#wallcontentUl li{
+    display: block;
+    width: 910px;
+    height: 166px;
+    margin-top: 15px;
+    background-color: #f0e6eb;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.head-img{
+    float: left;
+    width: 130px;
+    height: 130px;
+    padding: 25px;
+}
+
+.list-content{
+    width: 700px;
+    float: right;
+    margin-right: 50px;
+    height: 150px;
+
+}
+
+.nick-name{
+    width: 700px;
+    font-size: 35px;
+    border-bottom: solid 5px #000;
+    display: block;
+}
+
+.text-content{
+
+    font-size: 30px;
+    word-break: break-all;
+
+}
+
+.text-content p{
+    width: 700px;
+}
+
+#content-detail{
+    width: 910px;
+    height: 528px;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 999;
+    display: none;
+}
+
+/******按钮组******/
+
+#button-list li{
+    float: left;
+    margin-left: 10px;
+}

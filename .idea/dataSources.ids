@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - votesky31@localhost" uuid="daa38ba3-8f15-4688-955e-25a403c2698a">
+    <database-info product="MySQL" version="5.6.25-0ubuntu0.15.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="votesky31"/>
+    <table name="main" schema="" catalog="votesky31" type="TABLE">
+      <column name="m_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cover_url" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="start_time" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="end_time" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="introduction" sqlType="VARCHAR" precision="360" scale="0" nullable="true" jdbcType="12"/>
+      <column name="keyword" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mvppd" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="hovpd" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mppv" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="m_id"/>
+      <exported-key name="mu_ibfk_1" table="mu" schema="" catalog="votesky31" columns="m_id"/>
+      <exported-key name="mv_ibfk_2" table="mv" schema="" catalog="votesky31" columns="m_id"/>
+    </table>
+    <table name="manager" schema="" catalog="votesky31" type="TABLE">
+      <column name="username" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="username"/>
+    </table>
+    <table name="mu" schema="" catalog="votesky31" type="TABLE">
+      <column name="m_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="have_voted" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="total_voted" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="m_id,user_id"/>
+      <foreign-key name="mu_ibfk_1" columns="m_id" ref-table="main" ref-schema="" ref-catalog="votesky31" ref-columns="m_id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="mu_ibfk_2" columns="user_id" ref-table="user" ref-schema="" ref-catalog="votesky31" ref-columns="user_id" update-rule="3" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="mv" schema="" catalog="votesky31" type="TABLE">
+      <column name="v_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="m_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="v_id,m_id"/>
+      <foreign-key name="mv_ibfk_1" columns="v_id" ref-table="vote" ref-schema="" ref-catalog="votesky31" ref-columns="v_id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="mv_ibfk_2" columns="m_id" ref-table="main" ref-schema="" ref-catalog="votesky31" ref-columns="m_id" update-rule="3" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="user" schema="" catalog="votesky31" type="TABLE">
+      <column name="user_id" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="subscribe" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5piv5ZCm5YWz5rOo77yMMOS4uuWQpg=="/>
+      <column name="nickname" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" remarks="5pi156ew"/>
+      <column name="sex" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="5oCn5Yir77yMMOaYr+acquefpe+8jDHmmK/lhazvvIwy5piv5q+N"/>
+      <column name="language" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" remarks="55So5oi36K+t6KiA44CC"/>
+      <column name="city" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="province" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="country" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="headimgurl" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12" remarks="55So5oi35aS05YOPVVJM"/>
+      <column name="subscribe_time" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" remarks="55So5oi35YWz5rOo5pe26Ze077yM5Li65pe26Ze05oiz44CC5aaC5p6c55So5oi35pu+5aSa5qyh5YWz5rOo77yM5YiZ5Y+W5pyA5ZCO5YWz5rOo5pe26Ze0"/>
+      <column name="unionid" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12" remarks="55So5oi35Zyo5bmz5Y+w5Lit55qE5ZSv5LiA5qCH6K+G77yM"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <exported-key name="mu_ibfk_2" table="mu" schema="" catalog="votesky31" columns="user_id"/>
+      <index name="unionid" unique="false" columns="unionid"/>
+    </table>
+    <table name="vote" schema="" catalog="votesky31" type="TABLE">
+      <column name="v_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="v_title" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="introduction" sqlType="VARCHAR" precision="360" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cover_url" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="voted" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="sort" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="v_id"/>
+      <exported-key name="mv_ibfk_1" table="mv" schema="" catalog="votesky31" columns="v_id"/>
+    </table>
+    <table name="wallcache" schema="" catalog="votesky31" type="TABLE">
+      <column name="w_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="c_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="c_id,w_id"/>
+      <foreign-key name="wallcache_ibfk_1" columns="w_id" ref-table="wallmain" ref-schema="" ref-catalog="votesky31" ref-columns="w_id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="wallcache_ibfk_2" columns="c_id" ref-table="wallcontent" ref-schema="" ref-catalog="votesky31" ref-columns="c_id" update-rule="3" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="wallcontent" schema="" catalog="votesky31" type="TABLE">
+      <column name="c_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nickname" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="headimgurl" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="textcontent" sqlType="VARCHAR" precision="1500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="isshow" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="time" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" remarks="5Y+R5biD5pe26Ze0"/>
+      <primary-key name="PRIMARY" columns="c_id"/>
+      <exported-key name="wallcache_ibfk_2" table="wallcache" schema="" catalog="votesky31" columns="c_id"/>
+    </table>
+    <table name="wallmain" schema="" catalog="votesky31" type="TABLE">
+      <column name="w_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="coverurl" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="w_id"/>
+      <exported-key name="wallcache_ibfk_1" table="wallcache" schema="" catalog="votesky31" columns="w_id"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - @107.155.101.227" uuid="f6b5c553-30fd-4417-bc4b-d2f6631e2421">
+    <database-info product="MySQL" version="5.1.73" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+  </data-source>
+</component>
